@@ -1,0 +1,73 @@
+.nav{
+    position: fixed;/*항상 하단에 고정*/
+    bottom: 0;/* 맨 밑에 */
+    width: 100%;
+    background-color: #F9F9FA;
+    padding: 20px 50px;
+    box-sizing: border-box;
+    /*width:100% + padding:50px 이여서, icon이 넘어가므로
+      border-box가 padding size를 추가해도 width가 늘어나지 않게 방지해줌
+      (작동원리 -> width:(100% - 50px) + padding: 50px) */
+    border-top: 1px solid rgba(121, 121, 121, 0.3);
+}
+.nav__list{
+    display:flex;
+    justify-content: space-between;
+}
+.nav__link{
+    color: #2F363E;
+    position: relative;/*nav-notification에 absolute쓰기위해*/
+}
+/* more.html로 이동하는 nav__link의 dot 위치 단독설정 */
+.nav__link .point{
+    position: absolute;
+    top: -10px;
+}
+/* nav-notification animation */
+@keyframes notificationAnimation{
+0%{
+    transform: none;
+}50%{
+    transform: translateY(-5px) rotateY(360deg);
+}100%{
+    transform: none;
+}
+} 
+.nav__notification{
+    position: absolute;
+    /* 참고: https://www.daleseo.com/css-position-absolute/
+       내가 알고있던 absolute의 특성은,가장 가까운 relative를 가진 부모요소 기준으로 움직임
+       내가 몰랐던 absolute의 더 중요한 특성은, 상위요소에 속박되지 않고, 독립된 배치 문맥을 가져 새로운 레이어를 추가하는 효과랑 비슷해짐.(absolute는 주변요소를 신경쓰지 않고, 다른 요소보다 우선한다.
+    */
+    left: 19px;/* 직접적인 부모요소에 position:relative 속성 주기*/
+    bottom: 15px;
+    animation: notificationAnimation 2s ease-in-out infinite;
+}
+/* nav-btn animation */
+@keyframes appearBtnAnimation{
+    from{
+        opacity: 0;
+    }to{
+        transform: none;
+        opacity: 1;
+    }
+}
+.nav__btn{
+    /* 초기 위치 설정 - 처음부터 없는것처럼 표현 */
+    transform: translateY(50px);
+    opacity: 0;
+    animation:appearBtnAnimation 0.3s ease-in-out forwards;
+}
+
+.nav__btn:nth-child(2){
+    animation-delay: 0.3s;
+}
+.nav__btn:nth-child(3){
+    animation-delay: 0.5s;
+}
+
+.nav__btn:last-child{
+    animation-delay: 0.8s;
+}
+
+

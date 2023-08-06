@@ -1,0 +1,10 @@
+/* small read dot on screen-header__icons & nav__link:last-child  */
+.point{
+    background-color: tomato;
+    width: 6px;
+    height: 6px; 
+    border-radius: 50%;
+    position: absolute;
+    top: -6px;
+    right: -7px;
+}

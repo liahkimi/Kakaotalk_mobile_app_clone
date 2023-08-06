@@ -1,0 +1,105 @@
+/* 헤더 블록 전체 */
+.welcome-header{
+    margin: 90px 0px; /*상태바로부터 header와의 간격이 header와 login-form과의 간격과 같아서 margin: 90px 상하 통일시킴*/
+    text-align: center; /* 블록이 아닌 텍스트 중앙정렬은 display:flex로 조정이 아닌 text-align:center*/
+    display: flex;/* 헤더전체 & 헤더타이틀 & 헤더텍스트 모두 중앙정렬해주기*/
+    flex-direction: column;/*헤더타이틀 & 헤더텍스트 세로로 쌓이게 컬럼정렬*/
+    align-items: center;/* column에서 main-axis조정은 align-item*/
+    /* font-weight: 600;폰트 조금 두껍게=>일단 pass */
+}
+/* 헤더 타이틀 */
+.welcome-header__title{
+    margin-bottom: 20px; /* 헤더의타이틀로부터 헤더의텍스트와의 간격 */
+    font-size: 25px; /* 폰트 사이즈 크게*/
+}
+/* 헤더 텍스트 */
+.welcome-header__text{
+    width: 60%; /* 스크린 전체의 1/2 */
+    opacity: 0.7; /* 폰트색상이 아닌 투명도 조절로 gray색 만들기*/
+}
+
+/* 로그인 폼 */
+#login-form{
+    display:flex;
+    flex-direction: column; /* 내부 요소들 세로로 정렬시키기*/
+    margin: 0 30px; /* 마진 설정*/
+}
+/* 로그인 폼의 모든 인풋 태그들 */
+#login-form input{
+    padding: 15px 0px; /* 인풋태그 내부 텍스트와 입력칸 사이의 padding 조정*/
+    border: none; /* 끔찍한 테두리선 없애기*/
+    font-size: 18px;
+    margin-bottom: 25px; /* 인풋 태그간의 마진바텀 간격*/
+}
+/* input type이 submit이 아닐 때, border-bottom 컬러와 transition 적용 */
+#login-form input:not([type="submit"]){
+    border-bottom: 1px solid rgba(0,0,0,0.2); /* 회색 실선 border-bottom으로 표현*/
+    transition: border-color 0.3s ease-in-out; /* 보더라인 트랜지션 시간차 주기 - sexy*/
+}
+
+/* 로그인폼의 인풋태그의 placeholder 폰트색 수정-pseudo element*/
+#login-form input::placeholder{
+    color:rgba(0,0,0,0.4); /* border-bottom line 색보다 살짝 진하게*/
+}
+/* 기존 focus 아웃라인 효과 디폴트값 제거 코드는 reset.css파일에 적어둠 */
+/* 모든 input들이 focus 되었을 때  border-color가 바뀌게끔 설정함 - login btn은 border-bottom 설정이 제외되었음*/
+#login-form input:focus{
+    border-color:var(--yellow);/* 직접 지정한 variables의 컬러 쓰는 법*/
+}
+/* submit input태그 꾸미기 */
+#login-form input[type="submit"]{
+    background-color: var(--yellow);
+    cursor: pointer; /*커서모양 / not-allowed;와 progress도 가능*/
+    padding: 20px 0px;
+    border-radius: 5px; /* 버튼 코너 둥글게*/
+}
+/* 링크 꾸미기 */
+#login-form a{
+    text-align: center;
+    text-decoration: none;/* 하이퍼링크 디폴트 데코 없애기 */
+    color: inherit; /*부모요소인 login-form으로부터 black color 상속받기*/
+    font-size:13px;
+} 
+
+
+/*  login-form BEM 방식 -> not()을 안써도 되서 좋고 가독성도 좋음 */ 
+/* .login-form {
+display: flex;
+flex-direction: column;
+margin: 0px 30px;
+}
+
+.login-form__input,
+.login-form__btn {
+border: none;
+margin-bottom: 25px;
+font-size: 18px;
+}
+
+.login-form__input {
+padding: 15px 0px;
+border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+transition: border-color 0.3s ease-in-out;
+}
+
+.login-form__btn {
+background-color: var(--yellow);
+cursor: pointer;
+padding: 20px 0px;
+border-radius: 5px;
+}
+
+.login-form__input:focus {
+border-color: var(--yellow);
+}
+
+.login-form__input::placeholder {
+color: rgba(0, 0, 0, 0.4);
+}
+
+.login-form__a {
+text-align: center;
+text-decoration: none;
+color: inherit;
+font-size: 13px;
+}  */

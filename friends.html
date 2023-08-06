@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Friends - Kokoa Clone</title>
+  </head>
+  <body>
+    <div class="status-bar">
+      <!--상태바는 같은걸로 돌려쓸거라서 그냥 status-bar-->
+      <div class="status-bar__column">
+        <span>No Service</span>
+        <i class="fa-solid fa-wifi"></i
+        ><!--wifi Icon-->
+      </div>
+      <div class="status-bar__column">
+        <span>18:43</span>
+      </div>
+      <div class="status-bar__column">
+        <span>110%</span>
+        <i class="fa-solid fa-battery-full"></i
+        ><!--Battery Icon-->
+        <i class="fa-sharp fa-solid fa-bolt"></i
+        ><!--Lightning Icon-->
+      </div>
+    </div>
+
+    <header class="screen-header">
+      <h1 class="screen-header__title">Friends</h1>
+      <div class="screen-header__icons">
+        <span><i class="fa-solid fa-magnifying-glass fa-lg"></i></span>
+        <span><i class="fa-solid fa-music fa-lg"></i></span>
+        <span><i class="fa-solid fa-gear fa-lg"></i></span>
+      </div>
+    </header>
+
+    <a id="friends-display-link"
+      ><i class="fa-solid fa-circle-info"></i> Friends' Name Display<i
+        class="fa-solid fa-chevron-right fa-xs"
+      ></i
+    ></a>
+
+    <!--user-profile : photo, name-->
+    <main class="friends-screen">
+      <div class="user-component">
+        <div class="user-component__column">
+          <img
+            src="https://media.tenor.com/7JbbkdTGA38AAAAd/cute-cat.gif"
+            class="user-component__avatar user-component__avatar--xl"
+          />
+          <div class="user-component__text">
+            <h4 class="user-component__title">Cheddar</h4>
+            <!-- <h6 class="user-component__subtitle">this text whatever</h6> -->
+          </div>
+        </div>
+        <div class="user-component__column"></div>
+      </div>
+      <div class="friends-screen__channel">
+        <div class="friends-screen__channel-header">
+          <span>Channel</span>
+          <i class="fa-solid fa-chevron-up fa-xs"></i>
+        </div>
+        <div class="user-component">
+          <div class="user-component__column">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/Nyan_cat_250px_frame.PNG/220px-Nyan_cat_250px_frame.PNG"
+              class="user-component__avatar user-component__avatar--sm"
+            />
+            <div class="user-component__text">
+              <h4 class="user-component__title user-component__title--not-bold">
+                Flying-cat Game
+              </h4>
+            </div>
+          </div>
+          <div class="user-component__column">
+            <div>
+              <!--숫자2가 .user-component__column:last-child css효과 받지 않게-->
+              <span>2</span> <i class="fa-solid fa-chevron-right fa-xs"></i>
+            </div>
+          </div>
+        </div>
+        <div class="user-component">
+          <div class="user-component__column">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6WX8aaUHifaPrK1hC3pQGeQOfrKm7ECzi7Q&usqp=CAU"
+              class="user-component__avatar user-component__avatar--sm"
+            />
+            <div class="user-component__text">
+              <h4 class="user-component__title user-component__title--not-bold">
+                Let's playing piannooo cat!
+              </h4>
+            </div>
+          </div>
+          <div class="user-component__column">
+            <div>
+              <!--숫자2가 .user-component__column:last-child css효과 받지 않게-->
+              <span>5</span> <i class="fa-solid fa-chevron-right fa-xs"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__btn">
+          <a class="nav__link" href="friends.html">
+            <i class="fa-solid fa-user fa-2x"></i
+          ></a>
+        </li>
+        <li class="nav__btn">
+          <a class="nav__link" href="chats.html">
+            <span class="nav__notification badge">6</span>
+            <i class="fa-regular fa-comment fa-2x"></i
+          ></a>
+        </li>
+        <li class="nav__btn">
+          <a class="nav__link" href="find.html"
+            ><i class="fa-solid fa-magnifying-glass fa-2x"></i
+          ></a>
+        </li>
+        <li class="nav__btn">
+          <a class="nav__link" href="more.html">
+            <span class="point"></span>
+            <i class="fa-solid fa-ellipsis fa-2x"></i
+          ></a>
+        </li>
+      </ul>
+    </nav>
+    <!--splash-screen-->
+    <div id="splash-screen">
+      <!-- <i class="fa-solid fa-comment"></i> -->
+      <img src="https://media.tenor.com/zjqMqcOIoKYAAAAM/pianocat.gif" />
+    </div>
+    <!--no-mobile-->
+    <div id="no-mobile">
+      <img src="img/고양무룩.png" />
+      <span>Your screen is tooooo big 😿. . .</span>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/6ad5489232.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

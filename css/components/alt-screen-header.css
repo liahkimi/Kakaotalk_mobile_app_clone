@@ -1,0 +1,36 @@
+.alt-header{
+    padding: var(--horizontal-space);
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+
+/* chat.html에서 햄버거바 추가로 정확한 중앙 정렬이 아니여서 Hack 쓸것임*/
+/* hack(1)*/
+.alt-header__colum{
+    width: 33%;
+}
+.alt-header__column:first-child{
+    margin-right:auto; 
+    /* space-between이 글자수에 따라 중앙정렬이 안되기에 
+       margin-right:auto를 쓰면, 오른쪽의 나머지 빈 공간을 모두 마진값으로 자동 완성시켜준다. */
+}
+.alt-header__column:last-child{
+    margin-left:auto; 
+    /* 위와 동일하게 왼쪽의 나머지 빈공간을 모두 마진값으로 자동완성시켜줌.
+       다만, 이건 3등분일 경우 가능. 들어가는 column이 4개일 경우 또 달라진다. 
+       25%로 나누는게 나을듯*/
+    display:flex;/* hack(2)*/
+    justify-content: flex-end;/* hack(3)*/
+}
+.alt-header__column:nth-child(2){
+    text-align: center;/* hack(4)*/
+}
+.alt-header__title{
+    font-size: 26px;
+    font-weight: 600;
+}
+.alt-header__column span:last-child{
+    margin-left: 20px;
+}

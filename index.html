@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Kokoa Clone</title>
+  </head>
+  <body>
+    <div class="status-bar">
+      <!--상태바는 같은걸로 돌려쓸거라서 그냥 status-bar-->
+      <div class="status-bar__column">
+        <span>No Service</span>
+        <i class="fa-solid fa-wifi"></i
+        ><!--wifi Icon-->
+      </div>
+      <div class="status-bar__column">
+        <span>18:43</span>
+      </div>
+      <div class="status-bar__column">
+        <span>110%</span>
+        <i class="fa-solid fa-battery-full"></i
+        ><!--Battery Icon-->
+        <i class="fa-sharp fa-solid fa-bolt"></i
+        ><!--Lightning Icon-->
+      </div>
+    </div>
+    <header class="welcome-header">
+      <!--이 프로젝트 내 페이지에 header만  5개 이상 있음. 어떤 header인지 특정지어주기-->
+      <h1 class="welcome-header__title">Welcome to Kokoa Clone</h1>
+      <p class="welcome-header__text">
+        If you have a Kokoa Account, log in with your email or phone number.
+      </p>
+    </header>
+    <form id="login-form" action="friends.html" method="get">
+      <!--이 프로젝트 내 페이지에 form이 여기만 있어서, id로 지정함 (bem x)-->
+      <input name="username" type="text" placeholder="Email or phone number" />
+      <input name="password" type="password" placeholder="password" />
+      <input type="submit" value="Log In" />
+      <a href="#">Find Kokoa Account or Password</a
+      ><!--링크는 너무 많으니,a링크하나만을 위한 id나 class지정x, 일단 form에 넣어줬음-->
+    </form>
+    <!--no-mobile-->
+    <div id="no-mobile">
+      <img src="img/고양무룩.png" />
+      <span>Your screen is tooooo big 😿. . .</span>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/6ad5489232.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
