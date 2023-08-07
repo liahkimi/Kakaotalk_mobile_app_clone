@@ -1,0 +1,32 @@
+.status-bar{
+    top: 0;
+    width: 100%;
+    display:flex; /*가로정렬 만들기 위함*/
+    justify-content: center; /*CSS HACK 기술*/
+    /* status-bar column 떨어뜨려놓기위해 설정한 justify-content: space-between => No Service 문구의 길이가 길어서, 
+    중앙의 시계가 정중앙에 오지 못함 */
+    padding: 5px 3px; /*상태바와 맨 좌우상단 마진간격 만들기*/
+}
+.status-bar__column{
+    width: 33%; /* CSS HACK 기술(1) : 전체 너비 3등분해주기*/
+}
+/* No Service 와 wifi icon 사이 공간 만들기 */
+.status-bar__column:first-child span{ /* 여러개의 status-bar__colum중 첫번째 자식의 span*/
+    margin-right: 5px;
+}
+/* CSS HACK 기술(2) : 두번째 컬럼만 정중앙으로 보내기*/
+.status-bar__column:nth-child(2) {
+    display: flex;
+    justify-content: center;
+}
+/* CSS HACK 기술(3) : 세번째 컬럼만 맨 오른쪽으로 보내기 */
+.status-bar__column:last-child{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; /* 상단으로 살짝 조잡하게 올라간 아이템들 세로축 중앙 정렬해주기*/
+}
+/*  CSS HACK 기술(4) : 배터리 아이콘 좌우 공간 띄어주기 => 이로써 시계 정중앙에 두기 위한 CSS HACK 기술 끝!*/
+.status-bar__column .fa-battery-full{
+    margin: 0 5px;
+}
+

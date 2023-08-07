@@ -1,0 +1,27 @@
+#no-mobile{
+    position: absolute;
+    z-index:99; /* 맨 윗 layer*/
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:32px;
+    top:0;
+}
+#no-mobile img{
+    width:65%;
+    height: 80%;
+}
+#no-mobile span{
+color: white;
+font-size:25px;
+}
+/* screen-size가 645px 이하면, no-mobile 화면 띄우지 않기 */
+/* 645px 이상이면, display:flex가 되면서 no-mobile창 띄워짐 */
+@media screen and (max-width:645px){
+    #no-mobile{
+        display: none;
+    }
+}

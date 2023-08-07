@@ -1,0 +1,39 @@
+/* .main-screen은 default로 horizontal-padding써야해서 그냥두고,
+   .more-screen은 more.html에서만 customizing하기 위해 추가한 클래스 */
+.more-screen .icon-row{
+    margin-top:35px;
+}
+.more-suggestions{
+    margin-top: 50px;/* border-line과 icon-row 사이 간격*/
+    border-top: var(--main-border);
+    padding-top: 40px; /* border-line과 suggestion-title 사이의 간격*/
+}
+.more-suggestions__title{
+  margin-bottom:30px;  
+}
+/* flex-container */
+.more-suggestions__icons{
+    display: flex;
+    
+}
+/* flex-items */
+.more-suggestions__icon{
+    margin-right: 30px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.more-suggestions__icon-image{
+    width: 60px;
+    height: 60px;
+    background-color: var(--yellow);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.more-suggestions__icon i{
+    font-size: 32px; 
+    color: white;
+}

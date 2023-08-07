@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="css/styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat with xcat - Kokoa Clone</title>
+  </head>
+  <body id="chat-screen">
+    <!--유일하게 배경색을 바꾸고, 스크롤 길게해서 id줌-->
+    <!-- Status-bar -->
+    <div class="status-bar">
+      <div class="status-bar__column">
+        <span>No Service</span>
+        <i class="fa-solid fa-wifi"></i>
+      </div>
+      <div class="status-bar__column">
+        <span>18:43</span>
+      </div>
+      <div class="status-bar__column">
+        <span>110%</span>
+        <i class="fa-solid fa-battery-full"></i>
+        <i class="fa-sharp fa-solid fa-bolt"></i>
+      </div>
+    </div>
+    <!-- alt-screen-header -->
+    <header class="alt-header">
+      <div class="alt-header__column">
+        <a href="chats.html"><i class="fa-solid fa-angle-left fa-2x"></i></a>
+      </div>
+      <div class="alt-header__column">
+        <h1 class="alt-header__title">X Cat</h1>
+      </div>
+      <div class="alt-header__column">
+        <!--span태그로 감싸주는 이유는 icon을 위한 container-->
+        <span><i class="fa-solid fa-magnifying-glass fa-xl"></i></span>
+        <span><i class="fa-solid fa-bars fa-xl"></i></span>
+      </div>
+    </header>
+
+    <!--Main-screen -->
+    <!--수신 받은 msg-->
+    <main class="main-screen main-chat">
+      <div class="chat_timestamp">Sunday,January 1, 2023</div>
+      <div class="message-row">
+        <img src="https://media.tenor.com/DjKG61kOi64AAAAd/cat.gif" />
+        <div class="message-row__content">
+          <span class="message__author">X Cat</span>
+          <div class="message__info">
+            <span class="message__bubble">헤어져.</span>
+            <span class="message__time">7:00</span>
+          </div>
+        </div>
+      </div>
+      <!--내가 보낸 msg-->
+      <div class="message-row message-row--own">
+        <div class="message-row__content">
+          <div class="message__info">
+            <span class="message__bubble">걔가 그렇게 좋디?</span>
+            <span class="message__time">07:01</span>
+          </div>
+        </div>
+      </div>
+      <div class="message-row">
+        <img src="https://media.tenor.com/DjKG61kOi64AAAAd/cat.gif" />
+        <div class="message-row__content">
+          <span class="message__author">X Cat</span>
+          <div class="message__info">
+            <span class="message__bubble">사랑에 빠진게 죄는 아니잖아</span>
+            <span class="message__time">08:00</span>
+          </div>
+        </div>
+      </div>
+      <!--내가 보낸 msg-->
+      <div class="message-row message-row--own">
+        <div class="message-row__content">
+          <div class="message__info">
+            <span class="message__bubble">너 꼭 후회하게 될꺼야</span>
+            <span class="message__time">08:10</span>
+          </div>
+        </div>
+      </div>
+      <div class="chat_timestamp">Monday, August 6, 2023</div>
+      <div class="message-row">
+        <img src="https://media.tenor.com/DjKG61kOi64AAAAd/cat.gif" />
+        <div class="message-row__content">
+          <span class="message__author">X Cat</span>
+          <div class="message__info">
+            <span class="message__bubble">자니..?</span>
+            <span class="message__time">01:22</span>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- reply-->
+    <form class="reply">
+      <div class="reply__column">
+        <i class="fa-regular fa-square-plus fa-lg"></i>
+      </div>
+      <div class="reply__column">
+        <input type="text" placeholder="Write a message..." />
+        <i class="fa-regular fa-face-rolling-eyes fa-lg"></i>
+        <button><i class="fa-solid fa-arrow-up"></i></button>
+      </div>
+    </form>
+    <!--no-mobile-->
+    <div id="no-mobile">
+      <img src="img/고양무룩.png" />
+      <span>Your screen is tooooo big 😿. . .</span>
+    </div>
+    <!-- font-awesome -->
+    <script
+      src="https://kit.fontawesome.com/6ad5489232.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

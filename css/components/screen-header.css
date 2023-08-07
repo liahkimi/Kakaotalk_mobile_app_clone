@@ -1,0 +1,26 @@
+.screen-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px var(--horizontal-space);/* 임의로 padding-top&bottom 맞춰둠.복습할때 볼것*/
+}
+.screen-header__title{
+    font-size: 30px;
+    font-weight: 600;
+}
+.screen-header__icons span{
+    margin-left:20px;
+    position: relative;
+}
+
+/* 설정버튼에 animation 추가 */
+@keyframes rotateGear{
+    from{
+        transform: none;  
+    }to{
+        transform: rotateZ(360deg);
+    }
+}
+.screen-header__icons .fa-gear:hover{
+    animation: rotateGear 1s linear infinite;
+}

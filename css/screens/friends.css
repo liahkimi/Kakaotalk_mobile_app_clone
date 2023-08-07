@@ -1,0 +1,67 @@
+#friends-display-link{
+    display: block;
+    text-align: center;
+    background-color: #FAFAFA;
+    padding: 15px 0px;
+    font-size: 18px;
+    margin-bottom: 13px;
+    margin-top: -10px;
+}
+/* icon도 font처럼 색변경 가능 */
+#friends-display-link i{
+    color: rgba(0,0,0,0.3);
+    
+}
+
+/* big ver avatar & small ver avatar가 담긴  main box */
+.friends-screen{
+    padding: 0px var(--horizontal-space);
+}
+
+/* channel의 line 정리 */
+.friends-screen__channel{
+    margin-top: 25px;
+    border-top: var(--main-border);
+    padding-top: 15px;
+}
+.friends-screen__channel-header{
+    margin-bottom: 23px;
+    display:flex;/* 질문 : 왜 부모요소에게 적지 않는거지?*/
+    justify-content: space-between;
+    color: var(--gray);
+}
+
+/* splash-screen */
+/* 요소를 완전히 없앨순 없어서 투명도로 없앰 */
+@keyframes hideSplashScreen {
+    from{
+        opacity:1;
+    }
+    to{
+        opacity: 0;
+        visibility: hidden;
+        /* nav-btn 클릭 가능해짐 (hidden:마우스에 splash가 걸리지 않게 숨겨진것*/
+    }
+}
+
+#splash-screen{
+    background-color: #7ca0d0;
+    /* 맨 윗 layer로 만들것임 (모든것의 위)*/
+    position: absolute;/* relative인 직접적인 부모없이 body기준이였으면 함 */
+    height: 100vh;/* 화면 높이의 100%*/
+    width: 100vw;/* 화면 넓이의 100%*/
+    top: 0; /* 완전히 감싸기*/
+    /* 이모티콘 한가운데 두기 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 132px;
+    animation:hideSplashScreen 1s ease-in-out forwards; 
+    /* forward: 마지막 속성값을 애니메이션이 끝난뒤 유지되게 함
+                애니메이션이 끝나고 opacity:0;이 유지되는 것*/
+    animation-delay: 1.5s;
+}
+#splash-screen img{
+    width: 350px;
+    height: 200px;
+}

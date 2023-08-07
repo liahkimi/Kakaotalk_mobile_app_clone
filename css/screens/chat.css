@@ -1,0 +1,200 @@
+#chat-screen{
+ background-color: #ABC1D1;   
+ height: 500vh;
+}
+
+/* 채팅방만 status-bar & alt-header 상단에 고정 */
+#chat-screen .status-bar,
+#chat-screen .alt-header{
+    top:0; 
+    /* 질문: 이것의 원리가 무엇일까?
+       => status-bar의 top과 al-header의 top을 브라우저와의 간격이 0 으로 하여
+          text가 올라가도 지나가는게 안보이게 하기위해*/
+    position: fixed; 
+    width: 100%;
+    background-color: #ABC1D1; /* main-chat이 올라가면 안보이게 하기위해서 */
+    box-sizing: border-box; /* 설정해주지 않으면, 햄버거바 안보임*/
+}
+#chat-screen .status-bar{
+    z-index: 2;
+    /* z-index : layer순서 (순서가 높을수록 맨 상단에 위치)
+       position이 fixed인 경우 layer가 생겨 사용한다 
+       현재 layer 덮힌 순서 : main-chat(0층) < alt-header(1층) < status-bar(2층)*/
+
+}
+#chat-screen .alt-header{
+  margin-top: 10px;  
+  z-index: 1;
+}
+
+/* 스무스하게 대화창 나오는 animation */
+@keyframes fadeIn{
+from{
+    opacity: 0;
+    transform: translateY(30px);
+}to{
+    opacity: 1;
+    transform: none;
+}
+}
+
+.main-chat{
+    margin-top: 180px; /* 맨 밑 layer의 main-chat을 끌어내려줘서 보이게함*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 0.8s linear;
+}
+.chat_timestamp{
+    color: white;
+    background-color: #92A4B2;
+    padding: 15px;
+    border-radius: 25px;
+    font-size: 14px;
+    margin-bottom: 25px; /* message-row와의 간격*/
+}
+
+/* message-row */
+.message-row{
+    width: 100%;
+    display:flex;
+    margin-bottom: 25px; /* 두번째 msg와의 상하 간격*/
+}
+.message-row img{
+    width: 50px;
+    height: 50px;
+    border-radius: 40%;
+    margin-right: 10px; /* message-row__content 와의 간격*/
+}
+.message__author{
+    display: block;
+    margin-bottom: 5px;
+}
+.message__bubble{
+background-color: white;
+padding:13px; 
+font-size: 18px;  
+border-radius: 15px; 
+border-top-left-radius: 0px; /* 한쪽만 각지게 만들기*/
+margin-right: 5px;
+}
+
+/* flex-container */
+.message__info{
+    display: flex;
+    align-items: flex-end;
+}
+/* flex-item */
+.message__time, 
+.message__author{
+    color:var(--gray);
+    font-size: 14px;
+}
+
+/* message-row--own */
+/* modifier 적용해서 message-row와 구분함 */
+.message-row--own{
+    justify-content: flex-end;/* .message-row가 flex인 상태여서 가능*/
+}
+.message-row--own .message__bubble{
+    background-color: var(--yellow);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 0px;
+    margin-left: 5px;
+}
+
+/* bubble과 time 순서 order로 뒤바꾸기 => order 속성은 flex children에만 적용됨
+/* .message-row가 flex인 상태 */
+/*.message-row--own .message__bubble{
+    order: 1;
+}
+.message-row--own .message__time{
+    order: 0;} /* 왼쪽부터 먼저오게*/
+/* => 더 간략한 방법 */
+.message-row--own .message__info{
+   flex-direction: row-reverse;
+}
+
+/* reply */
+.reply{
+    position: fixed;  
+    bottom: 0;
+    width: 100%;  
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 25px;
+    align-items: center;
+    box-sizing: border-box;
+    transition: transform .3s ease-in-out;/*transition 필수*/
+}
+.reply .reply__column:first-child{
+    width:10%;
+}
+.reply .reply__column:last-child{
+    width:90%;
+    position: relative; /* 자식요소 absolute 주기위해*/
+}
+.reply i{
+    opacity:0.5;
+}
+.reply input{
+    padding: 10px; /* height 대신 padding으로 간격 해결*/
+    width:100%; /* 부모요소인 reply__column에 width 설정안해주면 적용안됌 */
+    border:var(--main-border);
+    border-radius: 20px;
+    transition: all .3s ease-in-out; /*transition 필수*/
+
+}
+.reply__column:last-child > i,/* direct-children으로 지정하니 button 이랑 따로 노는군*/
+.reply__column:last-child button{
+    position: absolute;
+    right: -19px;
+    top: 3.5px; /* absolute라서 수동으로 조절*/
+}
+.reply__column:last-child > i{
+    right: 20px;/* absolute라서 수동으로 조절 ㅠㅠ*/
+    top: 18px;
+}
+.reply__column button{
+    background-color: var(--yellow);
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.reply__column button i {
+    opacity: 1; /* 전송버튼만 선명하게*/
+}
+/* 요건 사실 reset.css에 input태그 focus none 해둬서 안해도될꺼같음*/
+.reply__column button:focus,
+.reply__column button:active{
+outline: none;
+}
+
+
+
+/****** 복잡하지만 fancy한 transition 효과 *****/
+/* 이 모든게 가능하려면, 위에 .reply와  .reply input에 transition 써야함 */
+.reply .reply__column:first-child,
+.reply .fa-face-rolling-eyes,
+.reply  button{
+    transition: opacity 0.3s ease-in-out;
+}
+/* 입력창 click시(focus), 주변 버튼 사라지게 하기 */
+/* focus-within property:'reply 내부에 어떤 요소가 focus 되어 있다면..'이라는 뜻 */
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-face-rolling-eyes,
+.reply:focus-within  button{
+    opacity: 0;
+}
+/* 입력창 focus하면 창크기 양쪽으로 넓어지게하기 (transition도 적용완)*/
+/* 2.입력창(input)은 올라오며 커짐 */
+.reply:focus-within input{
+    width: 98vw;
+    transform: translateX(-13%) translateY(-80px);
+}
+/* 1.container인 reply가 내려가고,*/
+.reply:focus-within{
+    transform: translateY(80px);
+}
