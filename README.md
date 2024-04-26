@@ -1,3 +1,3 @@
-# Kokoa Clon 2023 Update
+# Kakao talk mobile-app Clone 2023.07
 ###### https://liahkimi.github.io/-kokoa-clone-2023/
-HTML & CSS are so much fun!
+- HTML & CSS 
